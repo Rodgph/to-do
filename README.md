@@ -6,9 +6,9 @@ Este aplicativo monta uma lista de tarefas a ser iniciada, executada ou finaliza
 
 ## Elementos básicos:
 
-- [ ] Adicionar tarefa
-- [ ] Marcar tarefa como "Concluido"
-- [ ] Apagar tarefa
+- [x] Adicionar tarefa
+- [x] Marcar tarefa como "Concluido"
+- [x] Apagar tarefa
 
 ## Elementos avançados:
 
