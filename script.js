@@ -1,8 +1,22 @@
 const nameTask = document.getElementById("name-task");
 const buttonCreate = document.getElementById("button-create");
-
 const tasksElement = document.getElementById('tasks');
 const tasks = [];
+
+function save(){
+    const data = JSON.stringify(tasks)
+    localStorage.setItem('tasks', data);
+}
+
+function load(){
+    const data = localStorage.getItem('tasks');
+    if(data){
+        const list = JSON.parse(data);
+        list.forEach(task => {
+            tasks.push(task)
+        });
+    }
+}
 
 function add(task){
     // hashmap, dict, map, object.
@@ -11,17 +25,20 @@ function add(task){
         "check": false
     }
     tasks.push(item)
+    save()
     refreshPage()
 }
 
 function toggle(index){
     const task = tasks[index]
     task["check"] = !task["check"]
+    save()
     refreshPage()
 }
 
 function remove(index){
     tasks.splice(index, 1)
+    save()
     refreshPage()
 }
 
@@ -56,10 +73,12 @@ function refreshPage(){
         tasksElement.appendChild(div);
     }
 }
+
 buttonCreate.addEventListener('click', () =>{
     const task = nameTask.value;
     add(task)
     nameTask.value = '';
-} )
+});
 
+load();
 refreshPage()

@@ -12,4 +12,4 @@ Este aplicativo monta uma lista de tarefas a ser iniciada, executada ou finaliza
 
 ## Elementos avançados:
 
-- [ ] Gravar tarefas no "Local Storage"
+- [x] Gravar tarefas no "Local Storage"
